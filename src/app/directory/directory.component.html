@@ -1,5 +1,14 @@
 <h2>Ninja Lisitng </h2>
 
+
+
+<form id ="filter">
+
+    <label> Filter ninjas by name: </label>
+    <input type="text"   />
+
+</form>
+
 <ul id ="ninja-listing">
 
     <li *ngFor = "let ninja of ninjas">
@@ -7,7 +16,7 @@
 
             <span [ngStyle]= "{background: ninja.belt}">{{ninja.belt}} belt</span>
 
-            <h3>{{ninja.name}}</h3>
+            <h3>{{ninja.name }}</h3>
             <!--<div (click)="remove ($event)"[attr.data-name] = "ninja.name.">delete</div>-->
         </div>
     </li>

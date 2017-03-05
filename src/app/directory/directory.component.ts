@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./directory.component.css']
 })
 export class DirectoryComponent implements OnInit {
-
+term:any;
  ninjas =[
    {name: "Yoshi", belt:"black"},
    {name: "ryu", belt:"red"},
