@@ -1,0 +1,27 @@
+<header>
+  <h1>
+  {{title}}</h1>
+
+  <nav>
+      <ul>
+        <li><a [routerLink] = "['/']">Home</a></li>
+         <li><a [routerLink] = "['/directory']">Directory</a></li>
+        </ul>
+  </nav>
+</header>
+
+<section id ="main">
+
+  
+
+<!--<input type="text" #takingValue  (keyup) = "0">-->
+<!--<app-home [ninja] ="ninja"></app-home>-->
+<!--<app-home 
+[parentValue] ="takingValue.value"
+[ninja] ="ninja"
+></app-home>
+-->
+
+<router-outlet></router-outlet>
+
+</section>
