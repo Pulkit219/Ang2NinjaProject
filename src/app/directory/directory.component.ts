@@ -1,27 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { LoggingService } from '../logging.service';
+import{DataService} from '../data.service';
+// import 'rxjs/Rx';
+// import { Injectable } from '@angular/core';
+// import { HttpModule, RequestOptions,Http } from '@angular/http';
+
+
 
 
 @Component({
-  moduleId: module.id,
+  
   selector: 'app-directory',
   templateUrl: './directory.component.html',
-  styleUrls: ['./directory.component.css']
+  styleUrls: ['./directory.component.css'],
+  
 })
 export class DirectoryComponent implements OnInit {
-term:any;
- ninjas =[
-   {name: "Yoshi", belt:"black"},
-   {name: "ryu", belt:"red"},
-   {name: "crystal", belt:"purple"}
+  
+ term:any;
 
-];
+ ninjas =[];
 
-  constructor() { 
+  constructor(private logger : LoggingService, private dataService : DataService) {
 
-  }
+ }
+ logIt(){
+
+  this.logger.log();
+}
 
   ngOnInit() {
+
+    this.dataService.fetchData().subscribe(
+
+      (data) => this.ninjas = data
+    );
   }
 
 }

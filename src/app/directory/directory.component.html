@@ -5,13 +5,13 @@
 <form id ="filter">
 
     <label> Filter ninjas by name: </label>
-    <input type="text"   />
+     <input type="text"  [ngModelOptions]="{standalone: true}"  [(ngModel)]="term" />
 
 </form>
 
 <ul id ="ninja-listing">
 
-    <li *ngFor = "let ninja of ninjas">
+    <li *ngFor = "let ninja of ninjas | filter:term">
         <div class = "single-ninja">
 
             <span [ngStyle]= "{background: ninja.belt}">{{ninja.belt}} belt</span>
@@ -22,10 +22,12 @@
     </li>
 </ul>
 
+
+
 <p>
  hello  directory works!!!!!!!!
 </p>
-
+<button (click) ="logIt()">click</button>
 
 
 

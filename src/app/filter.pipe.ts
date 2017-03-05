@@ -5,8 +5,17 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    return null;
+
+
+  transform(ninjas: any, term: any): any {
+      
+    if(term === undefined) return ninjas;
+
+    return ninjas.filter(function(ninja){
+
+      return ninja.name.toLowerCase().includes(term.toLowerCase())
+    })
+    
   }
 
 }
