@@ -10,7 +10,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DirectoryComponent implements OnInit {
 
- classes = {'under': true, 'blue':true, 'red': false };
+ ninjas =[
+   {name: "Yoshi", belt:"black"},
+   {name: "ryu", belt:"red"},
+   {name: "crystal", belt:"purple"}
+
+];
 
   constructor() { 
 
