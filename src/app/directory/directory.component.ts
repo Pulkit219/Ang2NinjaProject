@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoggingService } from '../logging.service';
 import{DataService} from '../data.service';
+declare var firebase: any;
 // import 'rxjs/Rx';
 // import { Injectable } from '@angular/core';
 // import { HttpModule, RequestOptions,Http } from '@angular/http';
@@ -29,12 +30,23 @@ export class DirectoryComponent implements OnInit {
   this.logger.log();
 }
 
+  fbGetData(){
+
+    firebase.database().ref('/').on('child_added', (snapshot)=> {
+     this.ninjas.push(snapshot.val())
+    })
+  }
+
   ngOnInit() {
 
-    this.dataService.fetchData().subscribe(
+    // this.dataService.fetchData().subscribe(
 
-      (data) => this.ninjas = data
-    );
+    //   (data) => this.ninjas = data
+    // );
+
+    this.fbGetData();
   }
+
+
 
 }

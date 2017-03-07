@@ -24,10 +24,21 @@
 
 
 
+
+
 <p>
  hello  directory works!!!!!!!!
 </p>
-<button (click) ="logIt()">click</button>
+
+<form id="add-ninja">
+
+    <input type="text" [(ngModel)]="name"   [ngModelOptions]="{standalone: true}"/>
+    <input type="text" [(ngModel)]="belt"   [ngModelOptions]="{standalone: true}"/>
+    <button (click) = "postData(name, belt)">Add ninja</button>
+</form>
+
+
+<!--<button (click) ="logIt()">click</button>-->
 
 
 
