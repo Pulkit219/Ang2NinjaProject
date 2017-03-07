@@ -37,6 +37,11 @@ export class DirectoryComponent implements OnInit {
     })
   }
 
+  postData(name, belt){
+firebase.database().ref('/').push({name :name, belt:belt})
+
+  }
+
   ngOnInit() {
 
     // this.dataService.fetchData().subscribe(
@@ -45,6 +50,7 @@ export class DirectoryComponent implements OnInit {
     // );
 
     this.fbGetData();
+   
   }
 
 

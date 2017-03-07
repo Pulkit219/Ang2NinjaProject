@@ -32,8 +32,8 @@
 
 <form id="add-ninja">
 
-    <input type="text" [(ngModel)]="name"   [ngModelOptions]="{standalone: true}"/>
-    <input type="text" [(ngModel)]="belt"   [ngModelOptions]="{standalone: true}"/>
+    <input type="text" [(ngModel)]="name"   [ngModelOptions]="{standalone: true}" placeholder="NAME"/>
+    <input type="text" [(ngModel)]="belt"   [ngModelOptions]="{standalone: true}" placeholder="BELT"/> 
     <button (click) = "postData(name, belt)">Add ninja</button>
 </form>
 
